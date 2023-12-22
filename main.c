@@ -9,7 +9,7 @@
 *
 *
 *******************************************************************************
-* Copyright 2022, Cypress Semiconductor Corporation (an Infineon company) or
+* Copyright 2022-2023, Cypress Semiconductor Corporation (an Infineon company) or
 * an affiliate of Cypress Semiconductor Corporation.  All rights reserved.
 *
 * This software, including source code, documentation and related
@@ -50,7 +50,7 @@
 * Macros
 *******************************************************************************/
 /* Channel 0 input pin */
-#define VPLUS_CHANNEL_0             (P6_6)
+#define VPLUS_CHANNEL_0             CYBSP_POT
 
 
 /*******************************************************************************
@@ -94,7 +94,7 @@ const cyhal_adc_config_t adc_config = {
 * Function Name: main
 ********************************************************************************
 * Summary:
-* This is the main function for CM4 CPU. It does...
+* This is the main function for CM7 CPU. It does...
 *    1. Configure and initialize ADC.
 *    2. Every 200ms read the input voltage and display input voltage on UART.
 *
@@ -206,7 +206,6 @@ void adc_single_channel_init(void)
     }
 
     printf("ADC is configured in single channel configuration\r\n\n");
-    printf("Provide input voltage at pin P6_6. \r\n\n");
 }
 
 /*******************************************************************************
